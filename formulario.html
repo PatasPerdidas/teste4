@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preencher Formulário - Patas Perdidas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #e0f2e9;
+      background-image: url("assets/Cartoon_green_texture_grass.jpg");
+      background-repeat: repeat;
+      background-size: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .painel-central {
+      background-color: white;
+      width: 100%;
+      max-width: 1500px;
+      padding: 200px 30px 40px 30px;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .card-formulario {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+      /* Aqui aplicamos Quicksand */
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
+      color: #444;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 1rem;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%226%22%20viewBox%3D%220%200%2010%206%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200l5%206%205-6z%22%20fill%3D%22%23333%22/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 10px 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: border-color 0.3s ease;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    select:focus {
+      border-color: #28a745;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+    }
+
+
+    .form-footer {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+      justify-content: center;
+      position: relative;
+    }
+
+    .upload-label {
+      display: inline-block;
+      background-color: #fff;
+      color: #333;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .upload-label:hover {
+      background-color: #ffa94d;
+      border-color: #e07b00;
+      box-shadow:
+        inset 0 3px 5px rgba(0, 0, 0, 0.2),
+        0 6px 15px rgba(224, 123, 0, 0.5);
+      color: #fff;
+    }
+
+    .file-name {
+      font-size: 0.9rem;
+      color: #555;
+      font-style: italic;
+      position: relative;
+      top: 7px;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .form-button {
+      background-color: #fff;
+      color: #28a745;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      border: 2px solid #ccc;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-button:hover {
+      background: #28a745;
+      color: #fff;
+      border-color: #1e7e34;
+      box-shadow:
+        inset 0 3px 5px rgba(0, 0, 0, 0.2),
+        0 6px 15px rgba(30, 126, 52, 0.5);
+    }
+
+    .upload-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    @media (max-width: 600px) {
+      .card-formulario {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="painel-central">
+    <div class="card-formulario">
+      <h1>Preencher Formulário</h1>
+      <form action="https://formsubmit.co/contatopatasperdidas@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://patasperdidas.github.io/formulario/obrigado.html">
+
+        <!-- Seletor principal -->
+        <label for="tipo">Você:</label>
+        <select id="tipo" name="tipo">
+          <option value="">Selecione...</option>
+          <option value="perdeu">Perdi meu animal</option>
+          <option value="encontrou">Encontrei um animal</option>
+        </select>
+
+        <!-- Campos se perdeu -->
+        <div id="form-perdeu" style="display:none;">
+          <label for="nome">Seu nome:</label>
+          <input type="text" id="nome" name="nome">
+
+          <label for="nome-animal">Nome do animal:</label>
+          <input type="text" id="nome-animal" name="nome-animal">
+
+          <label for="descricao">Descrição do animal:</label>
+          <textarea id="descricao" name="descricao" rows="4"></textarea>
+
+          <label for="local">Último local visto:</label>
+          <input type="text" id="local" name="local">
+
+          <label for="contato">Forma de contato:</label>
+          <input type="text" id="contato" name="contato">
+        </div>
+
+        <!-- Campos se encontrou -->
+        <div id="form-encontrou" style="display:none;">
+          <label for="descricao-encontrado">Descrição do animal:</label>
+          <textarea id="descricao-encontrado" name="descricao-encontrado" rows="4"></textarea>
+
+          <label for="local-encontrado">Local onde foi encontrado:</label>
+          <input type="text" id="local-encontrado" name="local-encontrado">
+
+          <label for="estado-animal">Condição/aparência do animal:</label>
+          <input type="text" id="estado-animal" name="estado-animal">
+
+          <label for="esta-com-animal">Você está com o animal?</label>
+          <select id="esta-com-animal" name="esta-com-animal">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+
+          <label for="contato-encontrou">Forma de contato:</label>
+          <input type="text" id="contato-encontrou" name="contato-encontrou">
+        </div>
+
+        <!-- Upload + botão -->
+        <div class="form-footer" id="upload-section" style="display: none;">
+          <div class="upload-wrapper">
+            <label for="foto" class="upload-label">📎 Enviar Foto do Animal</label>
+            <input type="file" id="foto" name="foto" accept="image/*" onchange="mostrarNomeArquivo()">
+            <span id="nome-arquivo" class="file-name">Nenhum arquivo selecionado</span>
+          </div>
+
+          <button type="submit" class="form-button">Enviar Formulário</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="scripts/formulario.js"></script>
+</body>
+
+</html>

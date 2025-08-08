@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patas Perdidas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Raleway:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="background-grass">
+    <div class="main-content">
+
+      <header class="site-header">
+  <div class="header-container">
+    <img src="assets/patinha.png" alt="Logo Patinha" class="logo-icon" />
+    <h1 class="site-title">Patas Perdidas</h1>
+
+    <!-- Botão Hambúrguer -->
+    <button class="menu-toggle" aria-label="Abrir menu">
+      ☰
+    </button>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#formulario">Preencher Formulário</a></li>
+        <li><a href="#animais-perdidos">Animais Perdidos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+      <!-- Seção Hero / Sobre Nós -->
+      <section class="hero-section">
+        <div class="about-us-wrapper">
+
+          <!-- 💬 Balão com conteúdo separado -->
+          <div class="speech-bubble-wrapper">
+            <div class="speech-bubble animate-on-load">
+              <div class="speech-bubble-visual">
+                <div class="speech-tail"></div>
+              </div>
+              <div class="speech-content">
+                <h2 class="section-title">Sobre Nós</h2>
+                <p><strong>Patas Perdidas</strong> nasceu da vontade de reunir pessoas que perderam seus animais de
+                  estimação com quem possa tê-los visto ou encontrado.</p>
+                <p>Criamos uma plataforma colaborativa onde tutores podem divulgar seus pets desaparecidos e outras
+                  pessoas podem informar se encontraram ou avistaram algum animal.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 🐱 Gatinho com rabinho -->
+          <div class="cat-scene">
+            <img src="assets/mulher-gatinho.png" alt="Mulher com gatinho" class="base-img" />
+            <svg class="cat-tail" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+              <path id="tailPath" d="M80,130 C70,110 80,90 60,75 C40,60 60,45 45,30" stroke="#1d1d1d" stroke-width="16"
+                fill="none" stroke-linecap="round" />
+            </svg>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MAPA abaixo do gatinho -->
+      <section class="map-section" id="formulario">
+        <!-- <h2 class="map-title">Encontre ou Divulgue um Animal</h2> -->
+        <div class="map-wrapper">
+
+          <!-- Imagem do Mapa -->
+          <div class="map-container">
+            <img src="assets/mapa.png" alt="Mapa com localizadores" class="map-image" />
+
+            <!-- Pin Azul -->
+            <div class="pin-wrapper pin-blue">
+              <svg class="map-pin" viewBox="0 0 24 24">
+                <path d="M12 2C8 2 5 6 5 9.5c0 4.7 7 12.5 7 12.5s7-7.8 7-12.5C19 6 16 2 12 2z" fill="#3498db" />
+                <!-- Patinha -->
+                <circle cx="12" cy="10" r="2.3" fill="#fff" />
+                <circle cx="9.5" cy="7.2" r="0.9" fill="#fff" />
+                <circle cx="14.5" cy="7.2" r="0.9" fill="#fff" />
+                <circle cx="11" cy="6" r="1" fill="#fff" />
+                <circle cx="13" cy="6" r="1" fill="#fff" />
+              </svg>
+              <div class="tooltip">🐶 Cachorro visto aqui ontem</div>
+            </div>
+
+            <!-- Pin Verde -->
+            <div class="pin-wrapper pin-green">
+              <svg class="map-pin" viewBox="0 0 24 24">
+                <path d="M12 2C8 2 5 6 5 9.5c0 4.7 7 12.5 7 12.5s7-7.8 7-12.5C19 6 16 2 12 2z" fill="#27ae60" />
+                <!-- Patinha -->
+                <circle cx="12" cy="10" r="2.3" fill="#fff" />
+                <circle cx="9.5" cy="7.2" r="0.9" fill="#fff" />
+                <circle cx="14.5" cy="7.2" r="0.9" fill="#fff" />
+                <circle cx="11" cy="6" r="1" fill="#fff" />
+                <circle cx="13" cy="6" r="1" fill="#fff" />
+              </svg>
+              <div class="tooltip">🐱 Gato laranja desaparecido</div>
+            </div>
+
+            <!-- Pin Laranja -->
+            <div class="pin-wrapper pin-orange">
+              <svg class="map-pin" viewBox="0 0 24 24">
+                <path d="M12 2C8 2 5 6 5 9.5c0 4.7 7 12.5 7 12.5s7-7.8 7-12.5C19 6 16 2 12 2z" fill="#e67e22" />
+                <!-- Patinha -->
+                <circle cx="12" cy="10" r="2.3" fill="#fff" />
+                <circle cx="9.5" cy="7.2" r="0.9" fill="#fff" />
+                <circle cx="14.5" cy="7.2" r="0.9" fill="#fff" />
+                <circle cx="11" cy="6" r="1" fill="#fff" />
+                <circle cx="13" cy="6" r="1" fill="#fff" />
+              </svg>
+              <div class="tooltip">📍 Última localização informada</div>
+            </div>
+
+            <!-- Pin Marrom -->
+            <div class="pin-wrapper pin-brown">
+              <svg class="map-pin" viewBox="0 0 24 24">
+                <path d="M12 2C8 2 5 6 5 9.5c0 4.7 7 12.5 7 12.5s7-7.8 7-12.5C19 6 16 2 12 2z" fill="#5d4037" />
+                <!-- Patinha -->
+                <circle cx="12" cy="10" r="2.3" fill="#fff" />
+                <circle cx="9.5" cy="7.2" r="0.9" fill="#fff" />
+                <circle cx="14.5" cy="7.2" r="0.9" fill="#fff" />
+                <circle cx="11" cy="6" r="1" fill="#fff" />
+                <circle cx="13" cy="6" r="1" fill="#fff" />
+              </svg>
+              <div class="tooltip">📦 Animal resgatado e seguro</div>
+            </div>
+
+            <!-- Pin Rosa -->
+            <div class="pin-wrapper pin-pink">
+              <svg class="map-pin" viewBox="0 0 24 24">
+                <!-- Pin rosa -->
+                <path d="M12 2C8 2 5 6 5 9.5c0 4.7 7 12.5 7 12.5s7-7.8 7-12.5C19 6 16 2 12 2z" fill="#f26a8d" />
+                <!-- Patinha branca -->
+                <circle cx="12" cy="10" r="2.3" fill="#fff" />
+                <circle cx="9.5" cy="7.2" r="0.9" fill="#fff" />
+                <circle cx="14.5" cy="7.2" r="0.9" fill="#fff" />
+                <circle cx="11" cy="6" r="1" fill="#fff" /> <!-- aumentado de 0.7 para 1 -->
+                <circle cx="13" cy="6" r="1" fill="#fff" /> <!-- aumentado de 0.7 para 1 -->
+
+              </svg>
+              <div class="tooltip">🐾 Animal desaparecido recentemente</div>
+            </div>
+          </div>
+
+
+          <!-- Texto e Botão -->
+          <div class="map-text">
+            <div class="map-instruction">
+              <p class="headline">Perdeu ou encontrou um animal?</p>
+              <p class="subline">Preencha o formulário e ajude a reunir vidas com seus lares!</p>
+              <div class="form-button-wrapper">
+                <a href="formulario.html" target="_blank" class="bone-button" aria-label="Preencher Formulário">
+                  <svg viewBox="0 0 300 180" width="300" height="180" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-hidden="true">
+                    <path class="bone-shape" d="
+      M20,90 
+      C10,50 30,35 60,65 
+      L240,65 
+      C270,35 290,50 280,90 
+      C290,130 270,145 240,115 
+      L60,115 
+      C30,145 10,130 20,90 Z
+    " />
+                    <text x="150" y="92" text-anchor="middle" dominant-baseline="middle" class="bone-text">Preencher
+                      Formulário</text>
+                  </svg>
+                </a>
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="carousel-section" id="animais-perdidos">
+        <h2 class="section-title">Animais Perdidos</h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-prev">‹</button>
+
+          <div class="infinite-carousel">
+            <div class="carousel-track">
+              <!-- Lote 1 -->
+              <div class="carousel-card polaroid">
+                <img src="assets/Fubá.png" alt="Animal perdido" class="polaroid-img" />
+                <div class="polaroid-caption">
+                  <strong>Nome:</strong> Fubá<br>
+                  <strong>Desaparecido em:</strong> 10/07/2025<br>
+                  <strong>Última localização:</strong> Rua das Flores
+                </div>
+              </div>
+              <div class="carousel-card polaroid">
+                <img src="assets/Luna.png" alt="Animal perdido" class="polaroid-img" />
+                <div class="polaroid-caption">
+                  <strong>Nome:</strong> Luna<br>
+                  <strong>Desaparecido em:</strong> 28/06/2025<br>
+                  <strong>Última localização:</strong> Av. Central
+                </div>
+              </div>
+              <div class="carousel-card polaroid">
+                <img src="assets/Chico.png" alt="Animal perdido" class="polaroid-img" />
+                <div class="polaroid-caption">
+                  <strong>Nome:</strong> Chico<br>
+                  <strong>Desaparecido em:</strong> 15/07/2025<br>
+                  <strong>Última localização:</strong> Praça do Sol
+                </div>
+              </div>
+              <div class="carousel-card polaroid">
+                <img src="assets/Amora.png" alt="Animal perdido" class="polaroid-img" />
+                <div class="polaroid-caption">
+                  <strong>Nome:</strong> Amora<br>
+                  <strong>Desaparecido em:</strong> 01/08/2025<br>
+                  <strong>Última localização:</strong> Rua Azul
+                </div>
+              </div>
+
+              <div class="carousel-card polaroid">
+                <img src="assets/Simba.png" alt="Animal perdido" class="polaroid-img" />
+                <div class="polaroid-caption">
+                  <strong>Nome:</strong> Simba<br>
+                  <strong>Desaparecido em:</strong> 22/07/2025<br>
+                  <strong>Última localização:</strong> Bairro Jardim
+                </div>
+              </div>
+              <div class="carousel-card polaroid last-card">
+                <img src="assets/Thor.png" alt="Animal perdido" class="polaroid-img" />
+                <div class="polaroid-caption">
+                  <strong>Nome:</strong> Thor<br>
+                  <strong>Desaparecido em:</strong> 29/07/2025<br>
+                  <strong>Última localização:</strong> Vila Nova
+                </div>
+              </div>
+
+            </div>
+            <button class="carousel-next">›</button>
+          </div>
+        </div>
+        <div class="carousel-dots"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer id="contato" class="site-footer">
+    <div class="footer-center">
+      <div class="contact-link">
+        <img src="assets/endlogo.png" alt="Ícone Endereço" class="icon-envelope" />
+        <span class="email-text">Endereço: Itabuna/BA</span>
+      </div>
+
+      <a href="mailto:contatopatasperdidas@gmail.com" class="contact-link">
+        <img src="assets/emlogo.png" alt="Ícone Email" class="icon-envelope" />
+        <span class="email-text">Contato</span>
+      </a>
+
+      <a href="#" class="contact-link chat-trigger">
+        <img src="assets/chatlogo.png" alt="Ícone Chat" class="icon-envelope" />
+        <span class="email-text">Chat</span>
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Patas Perdidas - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+
+  <!-- Ícone do chat -->
+  <div id="chat-icon" class="chat-icon">
+    💬
+  </div>
+
+  <!-- Caixa de chat -->
+  <div id="chat-box" class="chat-box">
+    <div class="chat-header">
+      <span>Fale Conosco 🐾</span>
+      <button id="chat-close" class="chat-close">&times;</button>
+    </div>
+    <div class="chat-messages"></div>
+    <div class="chat-input">
+      <input type="text" id="chat-text" placeholder="Digite sua mensagem..." />
+      <button id="chat-send" class="chat-send">Enviar</button>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
