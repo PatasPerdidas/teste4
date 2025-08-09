@@ -1,0 +1,1218 @@
+/* Fundo com grama */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e0f2e9;
+  background-image: url("assets/Cartoon_green_texture_grass.jpg");
+  background-repeat: repeat;
+  background-size: 150px;
+}
+
+/* Estrutura geral */
+.background-grass {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.main-content {
+  background-color: white;
+  max-width: 1400px;
+  width: 100%;
+  padding: 240px 30px 40px 30px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.section-title,
+.carousel-title,
+.map-instruction .headline {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  /* corresponde ao peso Light (300) */
+  font-size: 2.2rem;
+  color: #333;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+/* Fonte Quicksand para os textos do 'Sobre Nós' e do formulário */
+.speech-content p,
+.map-instruction .subline {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Cabeçalho fixo */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px;
+  background-color: white;
+  padding: 30px 30px 20px 30px;
+  /* igual ao main-content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Header content */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 100px;
+  margin-bottom: 0px;
+  height: auto;
+}
+
+.site-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.7rem;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
+  /* ajustável */
+  margin-bottom: 30px;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin-top: 15px;
+  padding: 0;
+  justify-content: center;
+}
+
+.site-nav a {
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  /* já que estamos usando o peso 600 na importação */
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #333;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.site-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Seção principal */
+.hero-section {
+  padding: 120px 20px 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-us-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Balão flutuante */
+.speech-bubble-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.speech-bubble {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Apenas a camada visual flutua */
+.speech-bubble-visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #f9f9f9, #eeeeee);
+  border: 5px solid #ffffff;
+  border-radius: 15px;
+
+  box-shadow:
+    inset 0 0 15px rgba(0, 0, 0, 0.05),
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 0 3px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.4);
+
+  animation: glowPulse 3s ease-in-out infinite;
+  /* 💫 animação suave */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.speech-tail {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-80%);
+  width: 0;
+  height: 0;
+}
+
+/* ::after para criar o triângulo com borda 3D */
+.speech-tail::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -20px;
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-top: 22px solid #f0ac64;
+  z-index: -1;
+  filter: drop-shadow(0 -2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.speech-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.speech-content h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 0 15px;
+  color: #333;
+}
+
+.speech-content p {
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Ativa fade */
+.speech-bubble.animate-on-load.loaded {
+  opacity: 1;
+}
+
+/* Gatinho com rabinho */
+.cat-scene {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.base-img {
+  display: block;
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+}
+
+.cat-tail {
+  position: absolute;
+  top: 150px;
+  left: 55px;
+  width: 100px;
+  height: 200px;
+  z-index: 1;
+}
+
+.cat-tail path {
+  stroke-linecap: round;
+  stroke: #1d1d1d;
+  fill: none;
+}
+
+/* Seção do Mapa */
+.map-section {
+  text-align: center;
+  padding: 80px 20px 100px;
+}
+
+.map-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.map-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  /* menos espaço entre mapa e texto */
+  flex-wrap: wrap;
+
+  /* Moldura estilo balão */
+  border: 8px solid #f0ac64;
+  /* contorno mais grosso */
+  border-radius: 20px;
+  padding: 25px 40px;
+  /* ⬅️⬅️ aumenta nas laterais */
+  background-color: #ffffff;
+
+  /* Efeito 3D nas bordas */
+  box-shadow:
+    inset 0 0 20px rgba(240, 172, 100, 0.3),
+    /* brilho interno suave */
+    0 12px 20px rgba(0, 0, 0, 0.2),
+    /* sombra externa mais intensa */
+    0 0 0 4px rgba(255, 255, 255, 0.6);
+  /* anel de realce pra moldura */
+
+  margin: 0 -30px;
+  /* Aproxima mais das bordas laterais */
+}
+
+.map-container {
+  position: relative;
+  margin-left: 170px;
+  /* aumenta esse valor pra mover mais */
+  max-width: 499px;
+  flex-shrink: 0;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-text {
+  margin-top: 150px;
+  /* aumenta esse valor pra descer mais */
+  flex: 1;
+  min-width: 250px;
+  padding-left: 90px;
+  /* afasta o texto do mapa */
+}
+
+.map-instruction {
+  max-width: 600px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.map-instruction .headline {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 18px;
+}
+
+.map-instruction .subline {
+  font-size: 1.35rem;
+  color: #444;
+  margin: 0 0 -20px;
+  line-height: 1.4;
+}
+
+.map-instruction p {
+  margin-bottom: 25px;
+  white-space: normal;
+}
+
+
+.form-button-wrapper {
+  text-align: center;
+  /* centraliza só o botão */
+  margin-top: 0px;
+}
+
+/* Botão em formato de osso 3D */
+.form-button {
+  position: relative;
+  display: inline-block;
+  padding: 15px 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #28a745;
+  /* verde */
+  background: #fff;
+  border-radius: 40px;
+  border: 3px solid #28a745;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow:
+    inset 0 3px 5px rgba(0, 0, 0, 0.1),
+    0 6px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Para criar as "pontas" do osso nas laterais */
+.form-button::before,
+.form-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 50px;
+  background: #fff;
+  border: 3px solid #28a745;
+  border-radius: 50% / 50%;
+  box-shadow:
+    inset 0 3px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.form-button::before {
+  left: -35px;
+}
+
+.form-button::after {
+  right: -35px;
+}
+
+/* Efeito hover para o botão */
+.form-button:hover {
+  background: #28a745;
+  color: #fff;
+  border-color: #1e7e34;
+  box-shadow:
+    inset 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 6px 15px rgba(30, 126, 52, 0.5);
+}
+
+.bone-button {
+  display: inline-block;
+  cursor: pointer;
+  filter: drop-shadow(0 8px 7px rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.bone-button svg {
+  display: block;
+}
+
+.bone-shape {
+  fill: #fff;
+  stroke: #ccc;
+  stroke-width: 4;
+  filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.25));
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.bone-text {
+  fill: #28a745;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  pointer-events: none;
+  transition: fill 0.3s ease;
+}
+
+.bone-button:hover .bone-shape {
+  fill: #28a745;
+  stroke: #1e7e34;
+  filter: drop-shadow(0 7px 10px rgba(40, 167, 69, 0.7));
+}
+
+.bone-button:hover .bone-text {
+  fill: #fff;
+}
+
+.map-pin {
+  position: absolute;
+  width: 47px;
+  height: 47px;
+  animation: floatPin 2.5s ease-in-out infinite;
+  z-index: 10;
+}
+
+.pin-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  /* Faz ele aparecer acima */
+  margin-bottom: 10px;
+  background: #fff;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.pin-wrapper:hover .tooltip,
+.pin-wrapper:focus-within .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animação flutuante */
+@keyframes floatPin {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Localização dos pins com base na nova imagem */
+.pin-blue {
+  top: 37%;
+  /* gramado quadrado, atrás, à direita */
+  left: 57%;
+}
+
+.pin-orange {
+  top: 60%;
+  /* frente, direita (área cinza) */
+  left: 75%;
+}
+
+.pin-brown {
+  top: 68%;
+  /* canto esquerdo da frente */
+  left: 25%;
+}
+
+.pin-green {
+  top: 30%;
+  /* trás, direita */
+  left: 18%;
+}
+
+.pin-pink {
+  top: 53%;
+  left: 38%;
+}
+
+#formulario {
+  scroll-margin-top: 230px;
+}
+
+.carousel-section {
+  margin: 50px auto 80px;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.carousel-section h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+  scroll-behavior: smooth;
+  will-change: transform;
+}
+
+.animal-card {
+  background: #fff;
+  border: 2px solid #f0ac64;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(240, 172, 100, 0.3);
+  width: 280px;
+  flex-shrink: 0;
+  padding: 15px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.animal-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(240, 172, 100, 0.6);
+}
+
+.animal-card img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 160px;
+}
+
+.animal-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.3rem;
+  color: #f0ac64;
+}
+
+.animal-card p {
+  margin: 4px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Botões do carrossel */
+.carousel-section {
+  padding: 50px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.carousel-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track-wrapper {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.infinite-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-card {
+  min-width: 240px;
+  margin-right: 20px;
+}
+
+.carousel-card.last-card {
+  margin-right: 0 !important;
+}
+
+/* 🧃 Polaroid */
+.polaroid {
+  width: 280px;
+  background: white;
+  border: 10px solid white;
+  /* moldura branca */
+  border-top-width: 25px;
+  /* espaço maior no topo */
+  border-bottom-width: 25px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0px;
+  box-sizing: border-box;
+  user-select: none;
+
+  /* Sombra 3D uniforme */
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.12),
+    /* baixo */
+    0 -2px 8px rgba(0, 0, 0, 0.08),
+    /* topo */
+    -3px 0 8px rgba(0, 0, 0, 0.08),
+    /* esquerda */
+    3px 0 8px rgba(0, 0, 0, 0.08);
+  /* direita */
+
+  line-height: 1.5;
+}
+
+/* Espaço extra para não juntar sombra com fundo */
+.carousel-card.polaroid {
+  margin-bottom: 35px;
+  /* já existente */
+  position: relative;
+  top: 10px;
+  /* respiro em cima */
+  left: 5px;
+  /* respiro na esquerda */
+  right: 5px;
+  /* respiro na direita */
+}
+
+
+/* Foto dentro da polaroid */
+.polaroid-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: #eee;
+}
+
+/* Legenda */
+.polaroid-caption {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 20px;
+  margin: 12px 0 0 0;
+  background: #fff;
+  color: #333;
+  font-size: 1rem;
+  text-align: left;
+  border-radius: 0 0 8px 8px;
+  font-family: 'Special Elite', 'Courier New', monospace;
+
+  /* Espaçamento extra entre linhas */
+  line-height: 1.5;
+}
+
+/* Destaque para Nome, Data e Local */
+.polaroid-caption b {
+  display: block;
+  margin-bottom: 5px;
+  /* espaço entre título e conteúdo */
+}
+
+/* Pequeno espaçamento entre cada parágrafo */
+.polaroid-caption p {
+  margin: 5px 0;
+}
+
+/* Botões de navegação */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f0ac64;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.carousel-prev.disabled,
+.carousel-next.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: #e99743;
+}
+
+.carousel-prev {
+  left: -50px;
+}
+
+.carousel-next {
+  right: -50px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f0ac64;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: #e99743;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background-color: #f0ac64;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  /* só um espacinho entre carrossel e bolinhas */
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  /* importante para garantir que centralize no espaço todo */
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #f0ac64;
+}
+
+#animais-perdidos {
+  scroll-margin-top: 230px;
+  /* conforme a altura do seu menu */
+}
+
+/* Rodapé harmonizado */
+.site-footer {
+  background-color: white;
+  width: 100%;
+  max-width: 1400px;
+  /* igual ao cabeçalho e conteúdo */
+  margin: 80px auto 0 auto;
+  /* espaço acima para mostrar grama */
+  padding: 30px;
+  border-radius: 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  /* sombra suave igual ao cabeçalho */
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo h2 {
+  margin: 0;
+  color: #333;
+}
+
+.footer-icon {
+  width: 40px;
+}
+
+.center-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-link:hover {
+  color: #28a745;
+}
+
+.icon-envelope {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+footer,
+.footer-title,
+.footer-contact {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #333;
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* <-- de 'flex-start' para 'center' */
+  gap: 8px;
+  margin-left: 0;
+  /* Remove esse se ainda estiver */
+}
+
+.footer-address {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
+}
+
+.footer-address img,
+.contact-link img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+#contato {
+  scroll-margin-top: 100px;
+  /* ou ajuste conforme a altura do seu menu */
+}
+
+/* Ícone flutuante do chat */
+.chat-icon {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #fff;
+  color: #f0ac64;
+  border: 4px solid #f0ac64;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 3px 5px rgba(0, 0, 0, 0.1),
+    0 6px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  z-index: 999;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1);
+  box-shadow:
+    inset 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 6px 15px rgba(240, 172, 100, 0.5);
+}
+
+/* Caixa do chat */
+.chat-box {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 400px;
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 5px solid #f0ac64;
+  border-radius: 15px;
+  box-shadow:
+    inset 0 0 20px rgba(240, 172, 100, 0.3),
+    0 10px 15px rgba(0, 0, 0, 0.15),
+    0 0 0 3px rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+  z-index: 999;
+
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.35s ease;
+}
+
+
+.chat-box.open {
+  height: 55vh;
+  /* 👈 aqui fixamos a altura diretamente */
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Cabeçalho */
+.chat-header {
+  background: #f0ac64;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* Área de mensagens */
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Mensagens */
+.message {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.message.user {
+  background: #f0ac64;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.message.bot {
+  background: #f5f5f5;
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+/* Área de entrada */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #eee;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 14px 12px;
+  /* mais altura e espaçamento lateral */
+  font-size: 1rem;
+  border-radius: 0 0 0 8px;
+}
+
+/* Botão enviar */
+.chat-send {
+  background: #f0ac64;
+  border: 3px solid #f0ac64;
+  color: #ffffff;
+  padding: 0 18px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 0 0 8px 0;
+  transition: all 0.3s ease;
+}
+
+.chat-send:hover {
+  background: #e99743;
+  border-color: #e99743;
+}
+
+/* Animações */
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 15px rgba(0, 0, 0, 0.05),
+      0 10px 20px rgba(0, 0, 0, 0.2),
+      0 0 0 3px rgba(255, 255, 255, 0.6),
+      0 0 20px rgba(255, 255, 255, 0.4);
+  }
+
+  50% {
+    box-shadow:
+      inset 0 0 15px rgba(0, 0, 0, 0.05),
+      0 10px 20px rgba(0, 0, 0, 0.2),
+      0 0 0 3px rgba(255, 255, 255, 0.7),
+      0 0 40px rgba(255, 255, 255, 0.8);
+    /* mais forte aqui */
+  }
+  
+}
+/* Evitar scroll lateral */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Estilo padrão do menu */
+.site-nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .site-nav.show {
+    display: block;
+  }
+
+  .map-wrapper {
+    flex-direction: column;  /* empilha verticalmente */
+    align-items: center;     /* centraliza horizontalmente os itens */
+    text-align: center;      /* centraliza o texto dentro da div */
+  }
+
+  .map-container {
+    margin-bottom: 1.5rem;   /* espaçamento entre mapa e texto */
+  }
+
+  .map-text {
+    max-width: 90%;          /* limita largura pra não ficar gigante */
+  }
+
+  .form-button-wrapper {
+    display: flex;
+    justify-content: center; /* centraliza o botão */
+  }
+}
+
+
+
+
+
+
